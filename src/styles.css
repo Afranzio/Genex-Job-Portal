@@ -2,3 +2,12 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.footer{
+  position: absolute;
+  width: 100%;
+  height:10%;
+  bottom: 0;
+  padding: 3% 0;
+  background: #4392c0;
+}

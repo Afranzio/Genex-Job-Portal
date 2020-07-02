@@ -5,7 +5,13 @@ export default function JobAlert() {
   const lists = () => {
     return (
       <li className="Joblist">
-        <p>Job Description</p>
+        <h3>Job Description</h3>
+        <ul className = "Tagul" >
+          <li className = 'TagList' >Job-Tag</li>
+          <li className = 'TagList' >Job-Tag</li>
+          <li className = 'TagList' >Job-Tag</li>
+          <li className = 'TagList' >Job-Tag</li>
+        </ul>
         <span>
           <Button variant="success" className="btn btn-success">
             Apply Job

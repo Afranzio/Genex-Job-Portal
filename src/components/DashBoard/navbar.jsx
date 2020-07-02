@@ -1,55 +1,43 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-
-import {MdHome} from 'react-icons';
-import {MdAccount} from 'react-icons';
-
-// import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-
+import React from "react";
+import { Nav, Icon } from "rsuite";
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  flex: {
-    flex: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
+  marginBottom: 10
 };
 
-function NavBar(props) {
-  const { classes } = props;
+const CustomNav = ({ active, onSelect, ...props }) => {
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton href="/"  to ="/" className={classes.menuButton} color="inherit" aria-label="Menu">
-          <MdHome/>                    
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-             Job Portal
-          </Typography>
-          
-          <IconButton color="inherit" href="/profile" className={classes.button} to="/profile"><MdAccount/></IconButton>
-          <Button color="inherit" href="/login" className={classes.button} to="/login">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <Nav {...props} activeKey={active} onSelect={onSelect} style={styles}>
+      <Nav.Item eventKey="home" icon={<Icon icon="home" />}>
+        Home
+      </Nav.Item>
+      <Nav.Item eventKey="SignIn">SignIn</Nav.Item>
+      <Nav.Item eventKey="SignUp">SignUp</Nav.Item>
+      <Nav.Item eventKey="profie">Profile</Nav.Item>
+      <Nav.Item eventKey="about">About</Nav.Item>
+    </Nav>
   );
+};
+
+class Demo extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      active: 'home'
+    };
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+  handleSelect(activeKey) {
+    this.setState({ active: activeKey });
+  }
+  render() {
+    const { active } = this.state;
+    return (
+      <div >
+        <CustomNav appearance="tabs" active={active} onSelect={this.handleSelect} />
+      </div>
+    );
+  }
 }
 
-NavBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(NavBar);
+export default Demo;
