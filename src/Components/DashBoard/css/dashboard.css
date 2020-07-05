@@ -1,0 +1,71 @@
+.container{
+  margin: 0 10%;
+  justify-content: center;
+  text-align: center;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+}
+
+.nava, .nava:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.flex div{
+  margin: 1em;
+}
+
+.SearchInput {
+  min-width: 50%;
+  border-radius: 5px;
+  border-width: 0.5px;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+.ul,.Tagul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.Joblist {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0.5em;
+  margin: 1em;
+}
+
+.Tagul{
+  justify-content: center;
+  display: flex;
+}
+
+.TagList{
+  margin : 0.5em 1em;
+  background: #e0e0e0;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+}
+
+.TagList:hover{
+  cursor: pointer;
+  background: #37a000;
+  color: #ffffff;
+}
+
+.OneCard{
+  margin: 1em 0;
+  border: 1px solid black;
+}
+
+.OneCard a{
+  margin: 0 0.5em;
+}
+
+Footer{
+  bottom: 0;
+}
