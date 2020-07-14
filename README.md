@@ -22,3 +22,5 @@ Mr.Srikanth Project Guide Asked as to learn Backend also to work more Effective 
 Day 60-100 
 
 srikanth gve me task to work on backend of profile page.
+
+https://rupyride.com
